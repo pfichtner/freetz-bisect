@@ -17,13 +17,12 @@ make
 rm -rf $IMAGES/latest.image
 IMAGE=`cd $IMAGES && ls -t *.image | head -n1`
 LOGFILE=/tmp/$IMAGE.log
-touch $LOGFILE
+SESSION_NAME=serialout
+screen -S $SESSION_NAME -dm -L -Logfile $LOGFILE $SERIAL_DEV $SERIAL_SPEED
 
 power 'true'
 /tmp/tools/push_firmware $IMAGES/$IMAGE -f -ip 192.168.178.1
 
-SESSION_NAME=serialout
-screen -S $SESSION_NAME -dm -L -Logfile $LOGFILE $SERIAL_DEV $SERIAL_SPEED
 ( tail -f -n0 $LOGFILE & ) | timeout $TIMEOUT grep -q "$WAIT_FOR_CONTENT"
 RC=$?
 screen -X -S $SESSION_NAME quit
