@@ -18,23 +18,29 @@ FTDI (right, at the end of blue cable) and USB NIC (blue box, green CAT cable) c
 ![image 2](https://pfichtner.github.io/freetz-bisect/IMG_20220109_124311409.jpg)
 
 ```
-docker run \
---net=host \            # I guess easier to handle than NAT
---privileged \          # to access /dev/ttyUSBx
---rm -it \
---user 0 \              # to run apt install (missing tools for push_firmware
---entrypoint "" \       # ignore the container's entrypoint, if any
--v $PWD:/workspace      # not needed, here resists my git checkout which I do copy using "cp -aT /workspace /freetz" inside the container to have a freetz checkout
--v $PWD/dl:/freetz/dl \ # share download directory (not needed if you don't already have downloaded dependencies in the past)
-IMAGE=pfichtner/freetz \
-/bin/bash
+ docker run \
+---net=host \            # I guess easier to handle than NAT
+---privileged \          # to access /dev/ttyUSBx
++--net=host \             # I guess easier to handle than NAT
++--privileged \           # to access /dev/ttyUSBx
+ --rm -it \
+---user 0 \              # to run apt install (missing tools for push_firmware
+---entrypoint "" \       # ignore the container's entrypoint, if any
+--v $PWD:/workspace      # not needed, here resists my git checkout which I do copy using "cp -aT /workspace /freetz" inside the container to have a freetz checkout
+--v $PWD/dl:/freetz/dl \ # share download directory (not needed if you don't already have downloaded dependencies in the past)
+-IMAGE=pfichtner/freetz \
++--user 0 \               # run as root to install some packages needed for full automation, see below)
++--entrypoint "" \        # ignore the container's entrypoint, if any
++-v $PWD:/workspace       # not needed, here resists my git checkout which I do copy using "cp -aT /workspace /freetz" inside the container to have a freetz checkout
++-v $PWD/dl:/freetz/dl \  # share download directory (not needed if you don't already have downloaded dependencies in the past)
++IMAGE=pfichtner/freetz \ # my (not yet released) version of a freetz docker image
+ /bin/bash
 ```
 
 
 ### as root
 ```
 apt update -y
-apt install -y cpio iproute2 ncftp iputils-ping net-tools
 apt install -y mosquitto-clients screen
 ifconfig enx00e04c534458:0 192.168.178.100 up
 ```
