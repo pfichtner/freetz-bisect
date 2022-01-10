@@ -1,0 +1,242 @@
+
+(AVM) EVA Revision: 1.458 Version: 1458
+(C) Copyright 2005 AVM Date: Apr 11 2008 Time: 10:36:56 (0) 2 0x0-0x41D
+
+[FLASH:] ST Uniform-MirrorBit-Flash 16MB 64 Bytes WriteBuffer
+[FLASH:](Eraseregion [0] 128 sectors a 128kB) 
+[SYSTEM:] UR8 on 360MHz/120MHz syncron
+
+Eva_AVM >
+erase mtd1 ...........................................................................................................................
+Eva_AVM >
+flash .............................................................................................................................................<Reboot Device>
+
+(AVM) EVA Revision: 1.458 Version: 1458
+(C) Copyright 2005 AVM Date: Apr 11 2008 Time: 10:36:56 (1) 2 0x0-0x41D
+
+[FLASH:] ST Uniform-MirrorBit-Flash 16MB 64 Bytes WriteBuffer
+[FLASH:](Eraseregion [0] 128 sectors a 128kB) 
+[SYSTEM:] UR8 on 360MHz/120MHz syncron
+<create jffs2 from 0xB0D60000 len 0x220000 jffs2_size 34>
+Eva_AVM >AVM decompress Kernel:
+............................executeProgram on 0x942F8000
+[prom_init] 0
+[prom_init] argv[0]=gocommand
+[prom_init] argv[1]=console=ttyS0,38400
+[prom_init] fw_arg3 0x94643b70
+
+LINUX started...
+flashsize=16 MByte
+&_end=0x9437600c PFN_ALIGN(&_end)=0x94377000 CPHYSADDR(PFN_ALIGN(&_end))=0x14377000 memsize=0x4000000
+[c55/wlan] membase = 0x14000000 memtop = 0x18000000 memsize = 0x4000000
+[c55/wlan] memsegment0(size) = 3f60000 wlan(size) = 0x60000 c55(size) = 0x40000 memsegment2(size) = 0x0
+[c55/wlan] mdesc[0]: base = 0x14000000 size = 0x3f60000
+[c55/wlan] mdesc[1]: base = 0x17f60000 size = 0xa0000
+[c55/wlan] mdesc[2]: base = 0x18000000 size = 0x0
+[c55/wlan] mdesc[3]: base = 0x0 size = 0x0
+[ur8_pre_init] System Clk = 60000000 Hz               
+(ur8_gpio_init)
+ur8_clk_get_pll_factor: 300000000
+ur8_get_pci_clock 33333333
+(mips_reboot_setup)
+plat_timer_setup TIMER IRQ: 7
+Linux version 2.6.19.2 (4059) (gcc version 3.4.6) #1 Fri Apr 8 14:58:04 CEST 2011
+cpu-probe: Manufacturer MIPS
+mips-config1: JTAG pressent
+mips-config1: TLB size 16
+mips-config3: Vectored interrupts implmented
+CPU revision is: 00019068
+[mips_clock] default 360000000 MHz
+[ur8_clk_set_emif] SDRAM Refresh 0x3a8 Timing 0x2214717 Bank 0x21 Async 0xc42c301
+[ur8_pci_init]
+[pci] default: 33 MHz
+[setup_pci_master]
+[setup_pci_slave]
+Exposing 67108864 memory over PCI
+Setup Complete, Enabling PCI Interface
+PCI Interface Running
+PCI controller initialized
+[ur8_vbus_set_prio] instance vbus_nwss_dma level 2 escalator disabled (count 255, floor 7)
+[ur8_vbus_set_prio] instance vbus_sar_pdsp level 2 escalator disabled (count 255, floor 7)
+[ur8_vbus_set_prio] instance vbus_buffer_manager level 2 escalator disabled (count 255, floor 7)
+[ur8_vbus_set_prio] instance vbus_usb level 5 escalator disabled (count 255, floor 7)
+[ur8_vbus_set_prio] instance vbus_vlynq level 7 escalator disabled (count 255, floor 7)
+[ur8_vbus_set_prio] instance vbus_pci level 5 escalator disabled (count 255, floor 7)
+[ur8_vbus_set_prio] instance vbus_c55 level 3 escalator disabled (count 255, floor 7)
+[ur8_vbus_set_prio] instance vbus_tdm level 0 escalator disabled (count 255, floor 7)
+[ur8_vbus_set_prio] instance vbus_mips level 3 escalator disabled (count 255, floor 7)
+Determined physical RAM map:
+ memory: 03f60000 @ 14000000 (usable)
+ memory: 000a0000 @ 17f60000 (reserved)
+[init_bootmem]
+[free_bootmem]
+[reserve_bootmem]
+[mem_map-hack]: reduce size from 3145728 524288 Bytes
+[mem_map-hack]: move map base from 0x9437a000 to 0x940fa000
+[request_resource] Kernel code: start 0x14000000 < root->start 0x17f60000
+[request_resource] Kernel data: start 0x14246e90 < root->start 0x17f60000
+Built 1 zonelists.  Total pages: 97378
+Kernel command line: console=ttyS0,38400
+Primary instruction cache 16kB, physically tagged, 4-way, linesize 16 bytes.
+Primary data cache 16kB, 4-way, linesize 16 bytes.
+Synthesized TLB refill handler (20 instructions).
+Synthesized TLB load handler fastpath (32 instructions).
+Synthesized TLB store handler fastpath (32 instructions).
+Synthesized TLB modify handler fastpath (31 instructions).
+PID hash table entries: 2048 (order: 11, 8192 bytes)
+CPU frequency 360.00 MHz
+Using 180.000 MHz high precision timer.
+Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[free_all_bootmem]
+Memory: 60416k/64896k available (2331k kernel code, 4464k reserved, 704k data, 144k init, 0k highmem)
+Mount-cache hash table entries: 512
+Checking for 'wait' instruction...  available.
+NET: Registered protocol family 16
+[ur8_mtd_init]
+[ur8_mtd_init] flashsize = 0x01000000 Byte 16 MBytes
+[ur8_mtd_init] mtd[0] = 0x90000000,0x90000000
+[ur8_mtd_init] mtd[1] = 0x90020000,0x90F80000
+[ur8_mtd_init] mtd[2] = 0x90000000,0x90020000
+[ur8_mtd_init] mtd[3] = 0x90F80000,0x90FC0000
+[ur8_mtd_init] mtd[4] = 0x90FC0000,0x91000000
+[ur8_mtd_init] mtd[5] = 0x90000000,0x90000000
+pcibios_read_config: accessing present PCI slot : 14, where 0, size 4
+Master and Slave Enabled
+pktsched: using high resolution timer
+NET: Registered protocol family 2
+IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+TCP established hash table entries: 16384 (order: 4, 65536 bytes)
+TCP bind hash table entries: 8192 (order: 3, 32768 bytes)
+TCP: Hash tables configured (established 16384 bind 8192)
+TCP reno registered
+squashfs: version 3.2 (2007/01/02) Phillip Lougher
+Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
+fuse init (API version 7.8)
+io scheduler noop registered (default)
+avm_net_trace: Up and running.
+[avm] configured: watchdog event debug enable direct gpio 
+
+AVM_WATCHDOG: Watchdog Driver for AR7 Hardware (Version 1.0, build: Apr  8 2011 14:57:25)
+Serial: 8250/16550 driver $Revision: 1.3 $ 1 ports, IRQ sharing disabled
+serial8250: ttyS0 at MMIO 0x0 (irq = 15) is a UR8_UART
+[cpmac] Version: 1.131  -  Revision 790:1263  -  Fr   8.04.2011  14:57:52 
+[dectsync] inactive
+[cpmac] [cpmac_if_register] dev cpmac0 (phy_id 0) registered
+tun: Universal TUN/TAP device driver, 1.6
+tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+physmap platform flash device: 01000001 at 10000000
+physmap-flash.1: Found 1 x16 devices at 0x0 in 16-bit bank
+ Amd/Fujitsu Extended Query Table at 0x0040
+physmap-flash.1: CFI does not contain boot bank location. Assuming top.
+number of CFI chips: 1
+cfi_cmdset_0002: Disabling erase-suspend-program due to code brokenness.
+RedBoot partition parsing not available
+[ur8_jffs2_parser_function] mtd_info->name physmap-flash.1 mtd_info->index 0 param=0 p_mtd_pat=0x97e163bc
+[ur8_jffs2_parser_function] try partition kernel (offset 0x20000 len 16121856)
+[ur8_jffs2_parser_function] magic 20031985 found @pos 0xd60000, size 2228224
+[ur8_squashfs_parser_function] mtd_info->name physmap-flash.1 mtd_info->index 0 param=0 p_mtd_pat=0x97e163bc
+[ur8_squashfs_parser_function] *p_mtd_pat->name filesystem
+[ur8_squashfs_parser_function] try partition kernel (offset 0x20000 len 16121856 blocksize=20000)
+[ur8_squashfs_parser_function] magic found @pos 0x11a400
+6 find_squashfs partitions found on MTD device physmap-flash.1
+Creating 6 MTD partitions on "physmap-flash.1":
+0x0011a400-0x00f80000 : "rootfs"
+mtd: partition "rootfs" doesn't start on an erase block boundary -- force read-only
+[ur8_mtd_add_notifier] name rootfs
+[ur8_mtd_add_notifier] use rootfs
+[ur8_mtd_add_notifier] root device: /dev/mtdblock0 (rootfs)
+0x00020000-0x0011a400 : "kernel"
+mtd: partition "kernel" doesn't end on an erase block -- force read-only
+[ur8_mtd_add_notifier] name kernel
+[ur8_mtd_add_notifier] skip kernel
+0x00000000-0x00020000 : "urlader"
+[ur8_mtd_add_notifier] name urlader
+[ur8_mtd_add_notifier] skip urlader
+0x00f80000-0x00fc0000 : "tffs (1)"
+[ur8_mtd_add_notifier] name tffs (1)
+[ur8_mtd_add_notifier] skip tffs (1)
+0x00fc0000-0x01000000 : "tffs (2)"
+[ur8_mtd_add_notifier] name tffs (2)
+[ur8_mtd_add_notifier] skip tffs (2)
+0x00d60000-0x00f80000 : "jffs2"
+[ur8_mtd_add_notifier] name jffs2
+[ur8_mtd_add_notifier] skip jffs2
+Generic platform RAM MTD, (c) 2004 Simtec Electronics
+mtd-ram mtd-ram.2: no memory resource specified
+[ur8_ram_mtd_set_rw] PLATRAM_RO
+mtd-ram: probe of mtd-ram.2 failed with error -2
+CAPI Subsystem Rev 1.1.2.8
+TCP cubic registered
+mcfw: IGMPv3 fast forwarding
+NET: Registered protocol family 1
+NET: Registered protocol family 10
+IPv6 over IPv4 tunneling driver
+NET: Registered protocol family 17
+NET: Registered protocol family 8
+NET: Registered protocol family 20
+MUSB UR8 pdev active!
+PCI_STATUS_SET: 40000
+PCI_STATUS_CLR: 40000
+PCI_HOST_INT_EN: 0
+PCI_HOST_INT_CLR: 0
+PCI_BE_INT_En: 0
+PCI_BE_INT_CLR: 0
+[pci_int_init] done
+[TFFS_Init] 1: mtd_number: 3 | mtd_number2: 4
+Time: MIPS clocksource has been installed.
+[get_mtd_device_wrapped] 1: 3
+[get_mtd_device_wrapped] 2
+[TFFS_Init] 3
+[TFFS_Init] 4.0
+[put_mtd_device_wrapped] 1
+[put_mtd_device_wrapped] 2
+[put_mtd_device_wrapped] 3
+[get_mtd_device_wrapped] 1: 4
+[get_mtd_device_wrapped] 2
+[TFFS_Init] 5
+[TFFS_Init] 6
+[put_mtd_device_wrapped] 1
+[put_mtd_device_wrapped] 2
+[put_mtd_device_wrapped] 3
+[get_mtd_device_wrapped] 1: 3
+[get_mtd_device_wrapped] 2
+[TFFS_Init] 7
+[TFFS_Init] 8
+[TFFS_Init] 9
+TFFS: tiny flash file system driver. GPL (c) AVM Berlin (Version 2.0)
+[4294937500]maxrun: 1
+      mount on mtd3 and mtd4 (double buffering)
+Adam2 environment variables API installed.
+[avm_new] push_button_gpio=25 value=0 enabled
+VFS: Mounted root (squashfs filesystem) readonly.
+Freeing prom memory: 0kb freed
+Freeing unused kernel memory: 144k freed
+3init started: BusyBox v1.27.2 (2022-01-10 14:08:22 CET)
+rootdir=/
+table='/etc/device.table'
+mount: mounting /deAVM_WATCHDOG: System Init UEberwachung 240 Sekunden
+v/root on / failed: No such file or directory
+TFFS Name Table G
+mknod: /var/flash/ar7.cfg: File exists
+Loading /var/flash/freetz ... done.
+Loading users, groups and passwords ... done.
+Loading hosts ... done.
+Loading config ... done.
+Loading modules ... done.
+P-Defaults: do nothing
+starting AVM_LED_EVENTS
+led_modul_Fritz_Box_DECT_W920V: module license '
+(C) Copyright 2008 by AVM
+' taintskernel.
+[led_gpio_bit_driver_init] gpio 1 name power
+[led_gpio_bit_driver_init] gpio 36 name update
+[led_gpio_bit_driver_init] gpio 32 name dsl
+[led_gpio_bit_driver_init] gpio 17 name pppoe
+[led_gpio_bit_driver_init] gpio 9 name voip_con
+[led_gpio_bit_driver_init] gpio 27 name festnetz
+[led_gpio_bit_driver_init] gpio 21 name dual1
+[led_gpio_bit_driver_init] gpio 22 name dual2
+[led_gpio_bit_driver_init] gpio 28 name wlan
+[BUTTON] no buttons defined - disable new button controls
+[LED] "wyatt_earp_turn_off_leds" (0x00000000) not loaded
