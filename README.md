@@ -4,7 +4,7 @@
 - FTDI with support for 3.3V (LVTTL) to track the output of the Fritz!Box's serial console
 - Some kind of switchable outlet (any way to power on/off the Fritz!Box, I used a WiFi switchable for simplicity) 
 - Recommended but not needed: Separate Ethernet NIC, I used a cheap USB Ethernet NIC
-- Recommended but not needed: USB how, this makes wiring easier
+- Recommended but not needed: USB hub, this makes wiring easier
 - Ethernet cable
 
 ![image 1](https://pfichtner.github.io/freetz-bisect/IMG_20220109_124304362.jpg)
