@@ -17,6 +17,7 @@ FTDI (right, at the end of blue cable) and USB NIC (blue box, green CAT cable) c
 
 ![image 2](https://pfichtner.github.io/freetz-bisect/IMG_20220109_124311409.jpg)
 
+
 ```
  docker run \
 ---net=host \            # I guess easier to handle than NAT
@@ -61,7 +62,8 @@ git bisect good <SHA of latest version that is known to be good>
 git bisect bad <SHA of first version that is known to be bad>
 git bisect run /bisect.sh 
 ```
-Screencast ca nbe found here: http://pfichtner.github.io/bisect-asciinema/
+### Screencast
+<a href="http://pfichtner.github.io/bisect-asciinema/"><img src="https://pfichtner.github.io/bisect-asciinema/asciinema-poster.png" /></a>
 
 ### what's this all about?
 - The needle in the hay stack: How to find the one faulty commit in 2K commits that broke my router's firmware (sometime in the last four years)?
