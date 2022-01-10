@@ -1,7 +1,7 @@
 # freetz-bisect
 
 #### Hardware used (needed/recommended)
-- FTDI with support for 3.3V (LVTTL) to track the output of the Fritz!Box's serial console
+- FTDI with support for 3.3V (LVTTL) to track the output of the Fritz!Box's serial console (how to detect faulty/non faulty revisions? I could determine it loooking at the serial console output)
 - Some kind of switchable outlet (any way to power on/off the Fritz!Box, I used a WiFi switchable for simplicity) 
 - Recommended but not needed: Separate Ethernet NIC, I used a cheap USB Ethernet NIC
 - Recommended but not needed: USB hub, this makes wiring easier
@@ -56,11 +56,10 @@ git bisect run /bisect.sh
 - Bug komm raus, Du bist umzingelt :-D
 
 ### some numbers
-- one faulty commit that made some devices unusable
+- one faulty commit that stopped some devices from working properly
 - last known working commit four years ago
 - nearly 2,000 commits in those four years
-- possible every commit
-- any commit could in principle have caused the error, none could be excluded
+- any commit could possibly have caused the error, none could be excluded
 - exponentially helps: Thanks to binary search you can find the error within 11 tries in 2,000 revisions
-- took just an hour to compile the 11 firmware revisions, upload and test them
+- took just an hour to build (compile) the 11 firmware revisions, upload and test them on the real hardware
 
