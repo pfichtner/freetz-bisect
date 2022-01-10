@@ -7,10 +7,12 @@
 - Recommended but not needed: USB hub, this makes wiring easier
 - Ethernet cable
 
+Please not: You can also bisect manually. Then you have to upload the firmare built manually to the Fritz!Box and verify manually if this firmware does or doesn't work. If running manually there is no need for the FTDI nor a switchable outlet. 
+
 ![image 1](https://pfichtner.github.io/freetz-bisect/IMG_20220109_124304362.jpg)
+FTDI (right, at the end of blue cable) and USB NIC (blue box, green CAT cable) connected to the Fritz!Box. The Fritz!Box can be switched on and off using the switchable outlet (front, white)
+
 ![image 2](https://pfichtner.github.io/freetz-bisect/IMG_20220109_124311409.jpg)
-![video 1](https://pfichtner.github.io/freetz-bisect/VID_20220109_124042858.mp4)
-![video 2](https://pfichtner.github.io/freetz-bisect/VID_20220109_125347238.mp4)
 
 ```
 docker run \
@@ -62,4 +64,3 @@ git bisect run /bisect.sh
 - any commit could possibly have caused the error, none could be excluded
 - exponentially helps: Thanks to binary search you can find the error within 11 tries in 2,000 revisions
 - took just an hour to build (compile) the 11 firmware revisions, upload and test them on the real hardware
-
