@@ -10,7 +10,7 @@ Find the commit that stopped my Router from working properly within 2,000 commit
 - Recommended but not needed: USB hub, this makes wiring easier
 - Ethernet cable
 
-Please not: You can also bisect manually. Then you have to upload the firmare built manually to the Fritz!Box and verify manually if this firmware does or doesn't work. If running manually there is no need for the FTDI nor a switchable outlet. 
+Please not: You can also bisect manually. Then you have to upload the firmware built manually to the Fritz!Box and verify manually if this firmware does or doesn't work. If running manually there is no need for the FTDI nor a switchable outlet. 
 
 ![image 1](https://pfichtner.github.io/freetz-bisect/IMG_20220109_124304362.jpg)
 FTDI (right, at the end of blue cable) and USB NIC (blue box, green CAT cable) connected to the Fritz!Box. The Fritz!Box can be switched on and off using the switchable outlet (front, white)
