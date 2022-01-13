@@ -34,7 +34,7 @@ FTDI (right, at the end of blue cable) and USB NIC (blue box, green CAT cable) c
 +--entrypoint "" \        # ignore the container's entrypoint, if any
 +-v $PWD:/workspace       # not needed, here resists my git checkout which I do copy using "cp -aT /workspace /freetz" inside the container to have a freetz checkout
 +-v $PWD/dl:/freetz/dl \  # share download directory (not needed if you don't already have downloaded dependencies in the past)
-+IMAGE=pfichtner/freetz \ # my (not yet released) version of a freetz docker image
++IMAGE=pfichtner/freetz \ # my version of a freetz docker image
  /bin/bash
 ```
 
