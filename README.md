@@ -39,10 +39,10 @@ ifconfig enx00e04c534458:0 192.168.178.100 up
 ```
 
 ```
-su freetz
+su builduser
 ```
 
-### as freetz
+### as builduser
 copy .config and bisect.sh to container (```docker cp <local file> <container-id>:/```)
 
 ```
