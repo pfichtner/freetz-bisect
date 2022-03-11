@@ -35,10 +35,10 @@ sudo -E bash # switch to root user
 apt update -y
 apt install -y mosquitto-clients screen
 ifconfig enx00e04c534458:0 192.168.178.100 up
-exit
+exit # switch back to unprivileged user
 ```
 
-### as builduser (not root)
+### as builduser (unprivileged user/not root)
 copy .config and bisect.sh to container (```docker cp <local file> <container-id>:/```)
 
 ```
