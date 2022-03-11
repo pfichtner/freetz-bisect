@@ -23,8 +23,6 @@ FTDI (right, at the end of blue cable) and USB NIC (blue box, green CAT cable) c
  --net=host \             # I guess easier to handle than NAT
  --privileged \           # to access /dev/ttyUSBx
  --rm -it \
- --user 0 \               # run as root to install some packages needed for full automation, see below)
- --entrypoint "" \        # ignore the container's entrypoint
  -v $PWD:/workspace       # not needed, here resists my git checkout which I do copy using "cp -aT /workspace /freetz" inside the container to have a freetz checkout
  -v $PWD/dl:/freetz/dl \  # share download directory (not needed if you don't already have downloaded dependencies in the past)
  pfichtner/freetz \       # my version of a freetz docker image
@@ -33,16 +31,14 @@ FTDI (right, at the end of blue cable) and USB NIC (blue box, green CAT cable) c
 
 ### as root
 ```
+sudo -E bash # switch to root user
 apt update -y
 apt install -y mosquitto-clients screen
 ifconfig enx00e04c534458:0 192.168.178.100 up
+exit
 ```
 
-```
-su builduser
-```
-
-### as builduser
+### as builduser (not root)
 copy .config and bisect.sh to container (```docker cp <local file> <container-id>:/```)
 
 ```
