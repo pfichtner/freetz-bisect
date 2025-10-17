@@ -12,10 +12,10 @@ Find the commit that stopped my Router from working properly within 2,000 commit
 
 Please note: You can also bisect manually. Then you have to upload the firmware built manually to the Fritz!Box and verify manually if this firmware does or doesn't work. If running manually there is no need for the FTDI nor a switchable outlet. 
 
-![image 1](https://pfichtner.github.io/freetz-bisect/IMG_20220109_124304362.jpg)
+![image 1](https://pfichtner.github.io/asserts/freetz-bisect/IMG_20220109_124304362.jpg)
 FTDI (right, at the end of blue cable) and USB NIC (blue box, green CAT cable) connected to the Fritz!Box. The Fritz!Box can be switched on and off using the switchable outlet (front, white)
 
-![image 2](https://pfichtner.github.io/freetz-bisect/IMG_20220109_124311409.jpg)
+![image 2](https://pfichtner.github.io/asserts/freetz-bisect/IMG_20220109_124311409.jpg)
 
 
 ```
@@ -51,7 +51,7 @@ git bisect bad <SHA of first version that is known to be bad>
 git bisect run /bisect.sh 
 ```
 ### Screencast
-<a href="http://pfichtner.github.io/bisect-asciinema/"><img src="https://pfichtner.github.io/bisect-asciinema/asciinema-poster.png" /></a>
+<a href="http://pfichtner.github.io/asserts/bisect-asciinema/"><img src="https://pfichtner.github.io/asserts/bisect-asciinema/asciinema-poster.png" /></a>
 
 ### what's this all about?
 - The needle in the hay stack: How to find the one faulty commit in 2K commits that broke my router's firmware (sometime in the last four years)?
